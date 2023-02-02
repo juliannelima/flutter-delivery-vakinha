@@ -1,11 +1,18 @@
+import 'package:delivery_app/app/core/ui/helpers/loader.dart';
+import 'package:delivery_app/app/core/ui/helpers/messages.dart';
 import 'package:delivery_app/app/core/widgets/delivery_appbar.dart';
 import 'package:delivery_app/app/models/product_model.dart';
 import 'package:delivery_app/app/pages/home/widgets/delivery_product_tile.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> with Loader, Messages{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,9 +27,9 @@ class HomePage extends StatelessWidget {
                   product: ProductModel(
                     id:0, 
                     name: 'Lanche X', 
-                    description: 'descricao', 
+                    description: 'Lache acompanha pão, hambúguer, mussarela e maionese', 
                     price: 15.0,
-                    image: 'assets/images/logo.png'
+                    image: 'https://assets.unileversolutions.com/recipes-v2/106684.jpg?imwidth=800'
                   ),
                 );
               },
